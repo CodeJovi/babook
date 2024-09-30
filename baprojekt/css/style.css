@@ -1,0 +1,252 @@
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    margin-top: 80px; /* To account for the fixed dashboard at the top */
+}
+
+/* --- Dashboard Styles --- */
+
+/* Dashboard container */
+.dashboard {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Center items vertically */
+    padding: 10px 20px;
+    background-color: rgb(65, 64, 64);
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* Universal tab/button styling */
+.dashboard a,
+.dashboard form input[type="text"],
+.dashboard form button {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    background-color:  #57906c;
+    font-size: 16px;
+    height: 35px; /* Uniform height for all elements */
+    display: inline-flex;
+    align-items: center; /* Vertically center the text */
+    border: none;
+}
+
+/* Hover effect for all links/buttons */
+.dashboard a:hover,
+.dashboard form button:hover {
+    background-color:  #04cf4f;
+}
+
+/* Home tab (left aligned) */
+.dashboard .left {
+   
+    display: flex;
+    align-items: center; /* Center Home and search vertically */
+}
+
+/* Search form styling */
+.dashboard .left form {
+    display: flex;
+    margin-left: 20px; /* space between Home and the search bar */
+}
+
+.dashboard .left form input[type="text"] {
+    padding: 0 10px;
+    border-radius: 5px 0 0 5px;
+    width: 200px; /* Fixed width for search bar */
+    border: 4px solid #ccc;
+    background-color: #444;
+    color: white;
+}
+
+.dashboard .left form button {
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    height: 43px;
+}
+
+/* Right section (Login/Register/Logout) */
+.dashboard .right {
+    margin-right: 25px;
+    margin-right: 30px;
+}
+
+.logout {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+
+/* Dropdown container */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #04cf4f;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+/* --- Login and Registration Page Styles --- */
+
+/* General body styling for the login and registration page */
+body.login-page, body.register-page, body.upload-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0; /* No additional margins */
+    padding: 0; /* No additional padding */
+}
+
+/* Container for the form (login, registration, upload) */
+.form-container {
+    border: 2px solid purple; /* Purple border */
+    padding: 30px;
+    border-radius: 10px; /* Rounded corners */
+    width: 300px; 
+    background-color: white; /* White background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    text-align: center;
+    margin-top: 20px; /* Slight margin to prevent form from touching the top */
+}
+
+/* Input fields styling for text, email, and password */
+.form-container input[type="text"],
+.form-container input[type="email"],
+.form-container input[type="password"],
+.form-container input[type="file"],
+.form-container select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* Submit button styling */
+.form-container input[type="submit"] {
+    background-color: purple;
+    color: white;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.form-container input[type="submit"]:hover {
+    background-color: #5e2a92;
+}
+
+/* Link styling inside form container */
+.form-container a {
+    color: purple;
+    text-decoration: none;
+}
+
+.form-container a:hover {
+    text-decoration: underline;
+}
+
+/* Error message styling */
+.error {
+    color: red;
+    margin: 10px 0;
+}
+
+/* --- Additional Styles for the Upload Form --- */
+
+
+/* General book container styling */
+.books-container {
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap based on screen width */
+    gap: 20px; /* Space between each book */
+    justify-content: flex-start; /* Aligns items to the left */
+    padding: 20px; /* Adds padding around the container */
+}
+
+/* bookframe */
+.book {
+    border: 2px solid black; /* Black frame */
+    padding: 15px;
+    width: calc(25% - 40px); /* Flexible width, 4 books per row */
+    box-sizing: border-box; /* Includes padding in width */
+    text-align: center; /* Center text inside the book frame */
+    background-color: #f9f9f9; /* Light background for contrast */
+    margin-bottom: 20px; /* Space between rows */
+    transition: transform 0.3s ease; /* Animation for hover effect */
+}
+
+/* Responsive adjustments: books take full width on smaller screens */
+@media (max-width: 1200px) {
+    .book {
+        width: calc(33.333% - 40px); /* 3 books per row */
+    }
+}
+
+@media (max-width: 900px) {
+    .book {
+        width: calc(50% - 40px); /* 2 books per row */
+    }
+}
+
+@media (max-width: 600px) {
+    .book {
+        width: calc(100% - 40px); /* 1 book per row */
+    }
+}
+
+
+/* Book image styling */
+.book img {
+    width: 150px;
+    height: 200px;
+    object-fit: cover; /* Keeps the image aspect ratio */
+    margin-bottom: 10px;
+}
+
+/* Heading for book */
+.book h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+/* General styling for text under the book */
+.book p {
+    font-size: 0.9em;
+    margin: 5px 0;
+}

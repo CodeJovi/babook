@@ -1,0 +1,5 @@
+# Verhindert die Ausführung von PHP-Dateien im Upload-Verzeichnis
+<FilesMatch "\.(php|phtml|php3|php4|php5|php7)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
